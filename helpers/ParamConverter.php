@@ -152,6 +152,8 @@ class ParamConverter
                 } elseif ($filter['operator'] == 'endswith') {
                     $value = "%$value";
                 }
+
+		return $value !== null ? [$operator, $attribute, $value, false] : null;
             }
 
             return $value !== null ? [$operator, $attribute, $value] : null;
